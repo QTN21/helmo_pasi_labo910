@@ -8,11 +8,11 @@ jobs:
     steps:
     - uses: actions/checkout@master
 
-    - run: docker build . -t helmo_pasi_labo_container
+    - run: docker build . -t pasi_labo_container
       
     #- uses: Azure/container-scan@v0
     #  with:
-    #    image-name: helmo_pasi_labo_container
+    #    image-name: pasi_labo_container
     
     - uses: Azure/docker-login@v1
       with:
@@ -20,4 +20,4 @@ jobs:
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
     
-    - run: docker push helmo_pasi_labo_container
+    - run: docker push pasi_labo_container
