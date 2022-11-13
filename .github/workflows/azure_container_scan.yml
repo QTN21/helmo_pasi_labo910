@@ -20,4 +20,6 @@ jobs:
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
     
-    - run: docker push pasi_labo_container
+    - run: docker tag pasi_labo_container:latest helmo.azurecr.io/pasi_labo_container:latest
+    
+    - run: docker push helmo.azurecr.io/pasi_labo_container
