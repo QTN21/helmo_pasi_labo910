@@ -21,9 +21,3 @@ jobs:
         password: ${{ secrets.REGISTRY_PASSWORD }}
     
     - run: docker push helmo.azurecr.io/demo:${{ github.sha }}
-    
-    - name: Save state
-    run: echo "{name}={value}" >> $GITHUB_STATE
-    
-    - name: Set output
-    run: echo "{name}={value}" >> $GITHUB_OUTPUT
