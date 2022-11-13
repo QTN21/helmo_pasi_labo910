@@ -8,16 +8,16 @@ jobs:
     steps:
     - uses: actions/checkout@master
 
-    - run: docker build . -t contoso.azurecr.io/k8sdemo:${{ github.sha }}
+    - run: docker build . -t helmo.azurecr.io/demo:${{ github.sha }}
       
     - uses: Azure/container-scan@v0
       with:
-        image-name: contoso.azurecr.io/k8sdemo:${{ github.sha }}
+        image-name: helmo.azurecr.io/demo:${{ github.sha }}
     
     - uses: Azure/docker-login@v1
       with:
-        login-server: contoso.azurecr.io
+        login-server: helmo.azurecr.io
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
     
-    - run: docker push contoso.azurecr.io/k8sdemo:${{ github.sha }}
+    - run: docker push helmo.azurecr.io/demo:${{ github.sha }}
