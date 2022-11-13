@@ -10,9 +10,9 @@ jobs:
 
     - run: docker build . -t 'helmo.azurecr.io:${{ github.sha }}'
       
-    - uses: Azure/container-scan@v0
-      with:
-        image-name: 'helmo.azurecr.io:${{ github.sha }}'
+    #- uses: Azure/container-scan@v0
+    #  with:
+    #    image-name: 'helmo.azurecr.io:${{ github.sha }}'
     
     - uses: Azure/docker-login@v1
       with:
